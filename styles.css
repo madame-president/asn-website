@@ -1,0 +1,657 @@
+:root {
+    --main-color: #2E8B57;
+    --secondary-color-1: #27ae60;
+    --secondary-color-2: #e8f8f5;
+    --text-color: #333333;
+    --background-color: #ffffff;
+    --light-text-color: #777777;
+    --accent-color: #f39c12;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--main-color);
+}
+
+.contact-btn {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: var(--secondary-color-1);
+}
+
+/* Banner */
+
+.banner {
+    background-image: url('images/cta.svg'); /* You'll need to provide this image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+}
+
+.banner-content {
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.banner h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.banner h4 {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Offerings */
+
+.offerings {
+    display: flex;
+    height: 80vh;
+}
+
+.offerings-content {
+    flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--secondary-color-2);
+}
+
+.offerings-content h4 {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.offerings-content p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.services-btn {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+.services-btn:hover {
+    background-color: var(--secondary-color-1);
+}
+
+.offerings-image {
+    flex: 1;
+    background-image: url('images/offerings.svg'); /* You'll need to provide this image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .offerings {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .offerings-content,
+    .offerings-image {
+        flex: none;
+    }
+
+    .offerings-image {
+        height: 300px;
+    }
+}
+
+/* ValueAdded */
+
+.value-added {
+    padding: 4rem 2rem;
+    background-color: var(--background-color);
+}
+
+.value-added h1 {
+    text-align: center;
+    color: var(--main-color);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--secondary-color-2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h4 {
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.card p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 992px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* CalltoAction */
+
+.call-to-action {
+    display: flex;
+    height: 80vh;
+}
+
+.cta-image {
+    flex: 1;
+    background-image: url('images/banner.svg'); /* You'll need to provide this image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cta-content {
+    flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--secondary-color-1);
+    color: white;
+}
+
+.cta-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+.cta-button:hover {
+    background-color: #e67e22; /* Darker shade of the accent color */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .call-to-action {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .cta-image,
+    .cta-content {
+        flex: none;
+    }
+
+    .cta-image {
+        height: 300px;
+    }
+}
+
+/* Footer */
+
+.footer {
+    background-color: #f5f5f5; /* Light gray background */
+    color: #333; /* Dark gray text for better readability */
+    padding: 4rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid #e0e0e0; /* Subtle top border */
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 2rem;
+    padding-right: 2rem;
+}
+
+.footer-section h3.logo {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--main-color); /* Use main color for logo */
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--main-color); /* Use main color for headings */
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #555; /* Slightly darker than the text for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--main-color); /* Use main color for link hover */
+}
+
+/* Media query for responsiveness (unchanged) */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        margin-bottom: 2rem;
+        padding-right: 0;
+    }
+}
+
+/* Our Process HTML */
+.our-process {
+    padding: 4rem 2rem;
+    background-color: var(--background-color);
+}
+
+.our-process h1 {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.process-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.process-card {
+    background-color: var(--secondary-color-2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.process-card h4 {
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.process-card p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 992px) {
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Services HTML */
+
+.our-services {
+    padding: 4rem 2rem;
+    background-color: var(--background-color);
+}
+
+.our-services h1 {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.services-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: var(--secondary-color-2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h4 {
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.service-card p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Service Packages HTML */
+
+.service-packages {
+    padding: 4rem 2rem;
+    background-color: var(--background-color);
+}
+
+.service-packages h1 {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.packages-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.package-card {
+    background-color: var(--secondary-color-2);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.package-card h2 {
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.package-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.package-card li {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.package-card li::before {
+    content: "•";
+    color: var(--main-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* About Us HTML */
+
+.about, .our-team {
+    padding: 4rem 2rem;
+    background-color: var(--background-color);
+}
+
+.about h1, .our-team h2 {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background-color: var(--secondary-color-2);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.team-card h4 {
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.team-card .designation {
+    display: block;
+    color: var(--secondary-color-1);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.team-card p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
